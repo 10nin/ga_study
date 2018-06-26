@@ -2,6 +2,9 @@
   (:require [clojure.test :refer :all]
             [ga-study.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest bin->dec-test
+  (testing "binary to decimal convert check."
+    (is (= (bin->dec '[1 0 0]) 4))
+    (is (= (bin->dec '[0]) 0))
+    (is (= (bin->dec '[1]) 1))
+    (is (= (bin->dec '[1 1]) 3))))

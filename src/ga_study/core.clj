@@ -1,6 +1,7 @@
-(ns ga-study.core)
+(ns ga-study.core
+  (:require [clojure.math.numeric-tower :as Math]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn bin->dec [b]
+  (if (= (count b) 0) 0
+      (+ (if (= 1 (first b)) (Math/expt 2 (- (count b) 1))
+             0) (bin->dec (rest b)))))
