@@ -11,3 +11,5 @@
 (defn target_f [x]
   (+ (java.lang.Math/sin (* 3 x)) (* 0.5 (java.lang.Math/sin (* 9 x))) (java.lang.Math/sin (+ (* 15 x) 50))))
   
+(defn gen-gene [dimension]
+  (vec (for [_ (range 1 (+ dimension 1))] (rand-int 2))))
