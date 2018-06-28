@@ -13,3 +13,6 @@
   
 (defn gen-gene [dimension]
   (vec (for [_ (range 1 (+ dimension 1))] (rand-int 2))))
+
+(defn gene-crossover [gene1 gene2 p]
+  (vec (concat (take p gene1) (take-last (- (count gene2) p) gene2))))
