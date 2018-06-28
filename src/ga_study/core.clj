@@ -16,3 +16,6 @@
 
 (defn gene-crossover [gene1 gene2 p]
   (vec (concat (take p gene1) (take-last (- (count gene2) p) gene2))))
+
+(defn generate-initial-group [gene-length group-size]
+  (for [_ (range 1 (+ group-size 1))] (gen-gene gene-length)))
