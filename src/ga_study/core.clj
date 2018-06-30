@@ -19,3 +19,6 @@
 
 (defn generate-initial-group [gene-length group-size]
   (for [_ (range 1 (+ group-size 1))] (gen-gene gene-length)))
+
+(defn invert [x]
+  (if (= x 0) 1 0))
