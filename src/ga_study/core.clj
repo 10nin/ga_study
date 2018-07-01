@@ -23,5 +23,8 @@
 (defn invert [x]
   (if (= x 0) 1 0))
 
+(defn stochastically-apply [f x rate]
+  (if (< (rand) rate) (f x) x))
+
 (defn mutation [gene f]
-  (vec (for [x gene] (f x))))
+  (vec (for [x gene] (stochastically-apply f x 0.03))))
