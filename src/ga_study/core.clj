@@ -28,3 +28,9 @@
 
 (defn mutation [gene f]
   (vec (for [x gene] (stochastically-apply f x 0.03))))
+
+(defn compare-gene [g1 g2]
+  (compare (target_f (bin->dec g1)) (target_f (bin->dec g2))))
+
+(defn sort-genes [genes f]
+  (sort f genes))
