@@ -14,8 +14,8 @@
 (defn gen-gene [dimension]
   (vec (for [_ (range 1 (+ dimension 1))] (rand-int 2))))
 
-(defn gene-crossover [gene1 gene2 p]
-  (vec (concat (take p gene1) (take-last (- (count gene2) p) gene2))))
+(defn gene-crossover [gene1 gene2 cross-point]
+  (vec (concat (take cross-point gene1) (take-last (- (count gene2) cross-point) gene2))))
 
 (defn generate-initial-group [gene-length group-size]
   (for [_ (range 1 (+ group-size 1))] (gen-gene gene-length)))
@@ -36,5 +36,8 @@
   (sort f genes))
 
 ;; generate initial group
-;; (generate-initial-group 10 20)
-;; 
+;; (x <- (generate-initial-group 10 20))
+;; cross-over
+;; (cp <- (/ (count (gene)))) ; cross-over on half point
+
+;; (gene-crossover gene1 gene2 cp)
