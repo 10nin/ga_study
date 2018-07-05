@@ -17,6 +17,8 @@
 (defn gene-crossover [gene1 gene2 cross-point]
   (list (vec (concat (take cross-point gene1) (take-last (- (count gene2) cross-point) gene2)))
         (vec (concat (take cross-point gene2) (take-last (- (count gene1) cross-point) gene1)))))
+(defn crossover-group [gene-group]
+  (apply concat (map #(gene-crossover (first %) (last %) (rand-int (count (first %)))) (partition 2 gene-group))))
 
 (defn generate-initial-group [gene-length group-size]
   (for [_ (range 1 (+ group-size 1))] (gen-gene gene-length)))
