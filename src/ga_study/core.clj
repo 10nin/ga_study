@@ -44,3 +44,6 @@
 ;; (cp <- (/ (count (gene)))) ; cross-over on half point
 
 ;; (gene-crossover gene1 gene2 cp)
+
+(defn -main []
+  (let [x (generate-initial-group 10 20)]))
