@@ -52,4 +52,4 @@
 ;; (gene-crossover gene1 gene2 cp)
 
 (defn -main []
-  (let [x (generate-initial-group 10 20)]))
+  (let [ini (generate-initial-group 10 20)])
